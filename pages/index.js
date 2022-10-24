@@ -72,7 +72,7 @@ function HomePage({products}) {
 export const getServerSideProps = async (context) => {
   console.log(context)
 
-  const res = await axios.get('http://localhost:3000/api/products')
+  const res = await axios.get('https://nextjs-productos.vercel.app/api/products')
 
   console.log(res.data)
   return {
