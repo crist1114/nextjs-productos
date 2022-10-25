@@ -1,44 +1,29 @@
-import { pool } from "../../../config/db"; 
+import {getProduct, updateProduct, deleteProduct} from '../../../controller/ProductController'
 
 export default async function obtenerProducto(req, res){
 
     switch(req.method){
 
         case 'GET': 
-            return await getProduct(req, res)
-
+            return await getOne(req, res)
         case 'DELETE':
-            return await deleteProduct(req, res)
+            return await deleteOne(req, res)
         case 'PUT':
-            return await updateProduct(req,res)
+            return await update(req,res)
     }
 
     
 }
 
-async function updateProduct(req, res){
-    const {id} = req.query;
-    try{
-
-        await pool.query('update product set ? where id = ?', [req.body, id])
-
-        return res.status(204).json()
-    }catch(error){
-        console.log(error.message)
-    }
+async function update(req, res){
+    return updateProduct(req, res)
     
 }
 
-async function getProduct(req, res){
-    const {id} = req.query;
-    const [result] = await pool.query('select * from product where id = ?', [id])
-
-    return res.status(200).json(result[0])
+async function getOne(req, res){
+    return getProduct(req, res);
 }
 
-async function deleteProduct(req, res){
-    const {id} = req.query;
-    const [result] = await pool.query('delete from product where id = ?', [id])
-
-    return res.status(204).json()
+async function deleteOne(req, res){
+    return deleteProduct(req, res)
 }

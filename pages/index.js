@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Layout } from "../components/Layout";
-import Link from "next/link";
 import {useRouter} from 'next/router'
 
 function HomePage({products}) {
@@ -70,11 +69,10 @@ function HomePage({products}) {
 }
 
 export const getServerSideProps = async (context) => {
-  console.log(context)
+ 
 
   const res = await axios.get('https://nextjs-productos.vercel.app/api/products')
 
-  console.log(res.data)
   return {
     props: {
       products: res.data
