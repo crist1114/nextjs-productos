@@ -1,8 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react'
 import { useRouter } from "next/router";
+import { useForm } from 'react-hook-form';
 
 export function ProductForm() {
+
+    const {register, handleSub, formState:{errors}} = useForm();
 
     const [product, setProduct] = useState({
         name: '',
@@ -53,22 +56,24 @@ export function ProductForm() {
 
                     <form class="mt-3" onSubmit={handleSubmit}>
                         <div class="mb-3">
-                          <label htmlFor='name'>Name: </label>
-                          <input type='text' name='name' class="form-control form-control-lg" placeholder="Producto" onChange={handlerChange} value={product.name}/>
-                       
-                        </div>
+                          <label htmlFor='name'>Nombre: </label>
+                          <input type='text' name='name'
+                          class="form-control form-control-lg" placeholder="Producto" onChange={handlerChange} value={product.name}/>
+                          { !product.name && product.price ?<p className="text-danger">Por favor ingrese el nombre del producto</p> : '' }
+                        </div> 
 
                         <div class="mb-3">
                         <label htmlFor='price'>Price: </label>
-                        <input type='number' name='price' id='price' 
+                        <input type='number'min={0.0} name='price' id='price' 
                         class="form-control form-control-lg" placeholder="Precio" onChange={handlerChange} value={product.price} />
+                        { !product.price && product.description ?<p className="text-danger">Por favor ingrese el precio del producto</p> : '' }
                         </div>
 
                         <div class="mb-3">
                         <label htmlFor='description'>Description: </label>
                         <textarea type='text' name='description' rows="2"
                         class="form-control form-control-lg" placeholder="Descripcion" onChange={handlerChange} value={product.description}></textarea>
-                          
+                         { !product.description && product.price ?<p className="text-danger">Por favor ingrese una descripcion para el producto</p> : '' } 
 
                         </div>
 
