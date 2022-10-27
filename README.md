@@ -37,6 +37,23 @@ git clone https://github.com/crist1114/nextjs-productos.git
 ```bash
 yarn install
 ```
+## BD
+Ahora que tenemos las dependencias instaladas vamos a montar una base de datos local :sparkles:
+
+Debes tener instalado MySql para montar la bd de la siguiente manera
+- Nos desplazamos a la carpeta database en donde se encuentra el script para crear la base de datos y las tablas en local
+- Lo siguiente sera crear en la raiz del proyecto un archivo ``` .env.local ``` 
+- Añadimos en este archivo las credenciales de la base de datos en local que creamos de la siguiente manera
+
+```bash
+  DB_HOST=tu_host
+  DB_USER=tu_usuario
+  DB_PASS=tu_contraseña
+  DB_NAME=tu_nombredebasededatos
+  DB_PORT=tu_puertodebd
+```
+y ya tenemos todo listo :+1: .
+
 Esto nos dejara el proyecto en local listo para ser ejecutado en localhost, ahora vamos a ejecutarlo con el siguiente comando
 
 ```bash
@@ -44,5 +61,5 @@ yarn dev
 ```
 abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado :fire:.
 
-Puedes comenzar a hacer modificaciones al archivo `pages/index.js`. La pagina deberia auto-recargarse cada vez que realices un cambio en el archivo
+Puedes comenzar a hacer modificaciones al archivo `pages/index.js`. La pagina deberia auto-recargarse cada vez que realices un cambio en el archivo.
 
