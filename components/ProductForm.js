@@ -1,11 +1,9 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react'
 import { useRouter } from "next/router";
-import { useForm } from 'react-hook-form';
 
 export function ProductForm() {
 
-    const {register, handleSub, formState:{errors}} = useForm();
 
     const [product, setProduct] = useState({
         name: '',
@@ -19,11 +17,11 @@ export function ProductForm() {
         e.preventDefault();
         if(router.query.id){
         
-          const res = await axios.put('/api/products/' + router.query.id, product)
+          await axios.put('/api/products/' + router.query.id, product)
         
         }
         else{
-          const res = await axios.post('/api/products', product)
+          await axios.post('/api/products', product)
         }
         router.push('/')
     }
@@ -33,8 +31,8 @@ export function ProductForm() {
 
         useEffect(()=>{
 
-            const getProduct = async ()=> {
-                  const {data} = await axios.get('/api/products/' + router.query.id)
+            const getProduct = async (id)=> {
+                  const {data} = await axios.get('/api/products/' + id)
                   setProduct({name: data.name, description: data.description, price: data.price})
                 }
 

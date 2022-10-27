@@ -6,7 +6,7 @@ function HomePage({products}) {
   const router = useRouter();
  
   const handleDelete = async id => {
-    const res = await axios.delete('/api/products/'+id)
+    await axios.delete('/api/products/'+id)
     router.push('/')
   } 
 
