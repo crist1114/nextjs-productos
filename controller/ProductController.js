@@ -39,7 +39,7 @@ async function getProduct(req, res){
 
 async function deleteProduct(req, res){
     const {id} = req.query;
-    const [result] = await pool.query('delete from product where id = ?', [id])
+    await pool.query('delete from product where id = ?', [id])
 
     return res.status(204).json()
 }
