@@ -74,22 +74,18 @@ Puedes comenzar a hacer modificaciones al archivo `pages/index.js`. La pagina de
 ```json
 [
     {
-        "_id": "6356d539c01d0dcadd1934ee",
-        "nombre": "Celular",
-        "categoria": "Tecnologia",
-        "ubicacion": "CUCUTA",
-        "precio": 700000,
-        "fechaCreacion": "2022-10-24T18:11:04.393Z",
-        "__v": 0
+        "id": "6356d539c01d0dcadd1934ee",
+        "name": "Celular",
+        "description": "Tecnologia",
+        "price": 700000,
+        "createdAt": "2022-10-24T18:11:04.393Z"
     },
     {
-        "_id": "63617e9eba0fa19b2ae70bf5",
-        "nombre": "Coca cola personal",
-        "categoria": "Bebida",
-        "ubicacion": "Cucuta",
-        "precio": 20,
-        "fechaCreacion": "2022-11-01T20:16:13.553Z",
-        "__v": 0
+        "id": "63617e9eba0fa19b2ae70bf5",
+        "name": "Coca cola personal",
+        "description": "Bebida",
+        "price": 20,
+        "createdAt": "2022-11-01T20:16:13.553Z"
     }
 ]
 ``` 
@@ -99,22 +95,18 @@ Puedes comenzar a hacer modificaciones al archivo `pages/index.js`. La pagina de
 - body: 
 ```json
 {
-    "nombre": "Pepsi",
-    "categoria": "bebidas",
-    "ubicacion": "Barcelona",
-    "precio": 2
+    "name": "Pepsi",
+    "description": "bebidas",
+    "price": 2
 }
 ```
 - Ejemplo de respuesta:
 ```json
 {
-    "nombre": "Pepsi",
-    "categoria": "bebidas",
-    "ubicacion": "Barcelona",
-    "precio": 2,
-    "fechaCreacion": "2022-11-02T00:57:04.110Z",
-    "_id": "6361c495df46ac0ce6f5aad5",
-    "__v": 0
+    "id": "12"
+    "name": "Pepsi",
+    "description": "bebidas",
+    "price": 2
 }
 ```
 
@@ -124,22 +116,19 @@ Puedes comenzar a hacer modificaciones al archivo `pages/index.js`. La pagina de
 - body: 
 ```json
 {
-    "nombre": "Pepsi",
-    "categoria": "bebidas",
-    "ubicacion": "Cucuta",
-    "precio": 10
+    "name": "Pepsi",
+    "description": "bebidas",
+    "price": 2
 }
 ```
 - Ejemplo de respuesta:
 ```json
 {
-    "_id": "6361c495df46ac0ce6f5aad5",
-    "nombre": "Pepsi",
-    "categoria": "bebidas",
-    "ubicacion": "Cucuta",
-    "precio": 10,
-    "fechaCreacion": "2022-11-02T00:57:04.110Z",
-    "__v": 0
+    "id": "6",
+    "name": "Pepsi",
+    "description": "bebidas",
+    "price": 2,
+    "createdAt": "2022-11-01T20:16:13.553Z"
 }
 ```
 
@@ -150,13 +139,11 @@ Puedes comenzar a hacer modificaciones al archivo `pages/index.js`. La pagina de
 - Ejemplo de respuesta:
 ```json
 {
-    "_id": "6361c495df46ac0ce6f5aad5",
-    "nombre": "Pepsi",
-    "categoria": "bebidas",
-    "ubicacion": "Cucuta",
-    "precio": 10,
-    "fechaCreacion": "2022-11-02T00:57:04.110Z",
-    "__v": 0
+    "id": "6",
+    "name": "Pepsi",
+    "description": "bebidas",
+    "price": 2,
+    "createdAt": "2022-11-01T20:16:13.553Z"
 }
 ```
 ## Eliminar un producto
